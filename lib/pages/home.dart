@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:movieapp/components/searchbar.dart';
 import 'package:movieapp/components/spotwidget.dart';
+import 'package:movieapp/components/trendingComp.dart';
 import 'package:movieapp/constants.dart';
 
 class HomePage extends StatelessWidget {
@@ -33,6 +34,21 @@ class HomePage extends StatelessWidget {
                 children: [
                   Searchbar(height: screenheight, width: screenwidth),
                   SizedBox(height: screenheight * 0.02),
+                  Padding(
+                      padding: EdgeInsets.only(left: screenwidth * 0.01),
+                      child: Text(
+                        textAlign: TextAlign.start,
+                        'TRENDING MOVIES',
+                        style: TextStyle(
+                            letterSpacing: 1.1,
+                            fontSize: screenwidth * 0.052,
+                            fontWeight: FontWeight.w600,
+                            color: Constants.kGreyColor),
+                      ),
+                    ),
+                    SizedBox(height: screenheight * 0.01),
+                    TrendingComp(),
+                    SizedBox(height: screenheight * 0.02),
                 ],
               ),
             )
