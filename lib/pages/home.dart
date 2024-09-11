@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:movieapp/components/searchbar.dart';
 import 'package:movieapp/components/spotwidget.dart';
+import 'package:movieapp/components/topratedComp.dart';
 import 'package:movieapp/components/trendingComp.dart';
 import 'package:movieapp/components/upcomingComp.dart';
 import 'package:movieapp/constants.dart';
@@ -30,7 +31,7 @@ class HomePage extends StatelessWidget {
               top: screenwidth * 0.8,
             ),
             Padding(
-              padding: EdgeInsets.all(8),
+              padding: const EdgeInsets.all(8),
               child: ListView(
                 children: [
                   Searchbar(height: screenheight, width: screenwidth),
@@ -50,7 +51,7 @@ class HomePage extends StatelessWidget {
                   ),
                   SizedBox(height: screenheight * 0.01),
                   //WIDGET
-                  TrendingComp(),
+                  const TrendingComp(),
                   SizedBox(height: screenheight * 0.02),
                   //TEXT
                   Padding(
@@ -67,9 +68,26 @@ class HomePage extends StatelessWidget {
                   ),
                   SizedBox(height: screenheight * 0.01),
                   //WIDGET
-                  UpcomingComp(),
+                  const UpcomingComp(),
 
                   SizedBox(height: screenheight * 0.02),
+
+                    //TEXT
+                    Padding(
+                      padding: EdgeInsets.only(left: screenwidth * 0.01),
+                      child: Text(
+                        textAlign: TextAlign.start,
+                        'TOP RATED',
+                        style: TextStyle(
+                            letterSpacing: 1.1,
+                            fontSize: screenwidth * 0.052,
+                            fontWeight: FontWeight.w600,
+                            color: Constants.kGreyColor),
+                      ),
+                    ),
+                    SizedBox(height: screenheight * 0.01),
+                    //WIDGET
+                    const TopratedComp(),
                 ],
               ),
             )
