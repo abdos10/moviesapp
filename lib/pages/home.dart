@@ -72,22 +72,22 @@ class HomePage extends StatelessWidget {
 
                   SizedBox(height: screenheight * 0.02),
 
-                    //TEXT
-                    Padding(
-                      padding: EdgeInsets.only(left: screenwidth * 0.01),
-                      child: Text(
-                        textAlign: TextAlign.start,
-                        'TOP RATED',
-                        style: TextStyle(
-                            letterSpacing: 1.1,
-                            fontSize: screenwidth * 0.052,
-                            fontWeight: FontWeight.w600,
-                            color: Constants.kGreyColor),
-                      ),
+                  //TEXT
+                  Padding(
+                    padding: EdgeInsets.only(left: screenwidth * 0.01),
+                    child: Text(
+                      textAlign: TextAlign.start,
+                      'TOP RATED',
+                      style: TextStyle(
+                          letterSpacing: 1.1,
+                          fontSize: screenwidth * 0.052,
+                          fontWeight: FontWeight.w600,
+                          color: Constants.kGreyColor),
                     ),
-                    SizedBox(height: screenheight * 0.01),
-                    //WIDGET
-                    const TopratedComp(),
+                  ),
+                  SizedBox(height: screenheight * 0.01),
+                  //WIDGET
+                  const TopratedComp(),
                 ],
               ),
             )

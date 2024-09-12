@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:movieapp/bloc/movie_bloc.dart';
 import 'package:movieapp/pages/home.dart';
 
 void main() {
@@ -14,13 +16,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(fontFamily: GoogleFonts.kadwa().fontFamily),
-      routes: {
-        '/homepage': (context) => const HomePage(),
-      },
-      home: const HomePage(),
-    );
+    return BlocProvider(
+        create: (context) => MovieBloc(),
+        child: MaterialApp(
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData(fontFamily: GoogleFonts.kadwa().fontFamily),
+          home: const HomePage(),
+        ));
   }
 }

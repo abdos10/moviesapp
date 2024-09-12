@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:movieapp/constants.dart';
 import 'package:movieapp/moviemodul.dart';
+import 'package:movieapp/pages/detailsPage.dart';
 
 class TrendingTemplet extends StatefulWidget {
   final List<Movie> movies;
@@ -75,7 +76,12 @@ class _TrendingTempletState extends State<TrendingTemplet> {
               ),
             ),
             child: GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => Detailsspage(movie: movie)));
+              },
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),

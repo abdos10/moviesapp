@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:movieapp/constants.dart';
 import 'package:movieapp/moviemodul.dart';
+import 'package:movieapp/pages/detailsPage.dart';
 
 class MovieTemple extends StatelessWidget {
   final List<Movie> movies;
@@ -38,7 +39,12 @@ class MovieTemple extends StatelessWidget {
               ),
             ),
             child: GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => Detailsspage(movie: movie)));
+              },
               child: Container(
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
