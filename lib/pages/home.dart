@@ -93,6 +93,96 @@ class HomePage extends StatelessWidget {
             )
           ],
         ),
+        floatingActionButton: Padding(
+          padding: const EdgeInsets.only(top: 30.0),
+          child: Container(
+            padding: const EdgeInsets.all(2),
+            width: screenwidth * 0.18,
+            height: screenheight * 0.1,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              gradient: LinearGradient(
+                colors: [
+                  Constants.kPinkColor.withOpacity(0.9),
+                  Constants.kGreenColor.withOpacity(0.9),
+                ],
+              ),
+            ),
+            child: Container(
+              decoration: BoxDecoration(
+                  color: Constants.kGreyColor.withOpacity(0.8),
+                  shape: BoxShape.circle),
+              child: Icon(
+                Icons.tv,
+                size: screenwidth * 0.12,
+                color: Constants.kWhiteColor.withOpacity(0.9),
+              ),
+            ),
+          ),
+        ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        bottomNavigationBar: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [
+                Constants.kPinkColor.withOpacity(0.1),
+                Constants.kPinkColor.withOpacity(0.075),
+                Constants.kGreenColor.withOpacity(0.075),
+                Constants.kGreenColor.withOpacity(0.1),
+              ],
+            ),
+            borderRadius: const BorderRadius.only(
+              topLeft: Radius.circular(20),
+              topRight: Radius.circular(20),
+            ),
+            border: Border.all(
+              width: 1.5,
+              color: Constants.kWhiteColor.withOpacity(0.2),
+            ),
+          ),
+          height: screenheight * 0.085,
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              IconButton(
+                onPressed: () {},
+                icon: Icon(
+                  color: Constants.kWhiteColor.withOpacity(0.9),
+                  Icons.home,
+                  size: screenwidth * 0.09,
+                ),
+              ),
+              IconButton(
+                onPressed: () {},
+                icon: Icon(
+                  color: Constants.kWhiteColor.withOpacity(0.9),
+                  Icons.favorite,
+                  size: screenwidth * 0.09,
+                ),
+              ),
+              const Text(''),
+              IconButton(
+                onPressed: () {},
+                icon: Icon(
+                  color: Constants.kWhiteColor.withOpacity(0.9),
+                  Icons.watch_later_rounded,
+                  size: screenwidth * 0.09,
+                ),
+              ),
+              IconButton(
+                onPressed: () {},
+                icon: Icon(
+                  color: Constants.kWhiteColor.withOpacity(0.9),
+                  Icons.download,
+                  size: screenwidth * 0.09,
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
