@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:movieapp/constants.dart';
 import 'package:movieapp/moviemodul.dart';
@@ -27,7 +28,7 @@ class _TrendingTempletState extends State<TrendingTemplet> {
 
     _pageController = PageController(initialPage: 0);
 
-    _timer = Timer.periodic(Duration(seconds: 4), (Timer timer) {
+    _timer = Timer.periodic(const Duration(seconds: 4), (Timer timer) {
       if (_currentPage < widget.movies.length - 1) {
         _currentPage++;
       } else {
@@ -37,7 +38,7 @@ class _TrendingTempletState extends State<TrendingTemplet> {
       // Animate the page change
       _pageController.animateToPage(
         _currentPage,
-        duration: Duration(milliseconds: 400),
+        duration: const Duration(milliseconds: 400),
         curve: Curves.easeInOut,
       );
     });
@@ -57,11 +58,15 @@ class _TrendingTempletState extends State<TrendingTemplet> {
 
     return Container(
       height: screenheight * 0.3,
-      child: PageView.builder(
-        controller: _pageController,
-        itemCount: widget.movies.length, //movies.length
-        scrollDirection: Axis.horizontal,
-        itemBuilder: (BuildContext context, int index) {
+      child: CarouselSlider.builder(
+        options: CarouselOptions(
+          autoPlay: true,
+          enlargeCenterPage: true,
+          autoPlayInterval: const Duration(seconds: 4),
+          aspectRatio: 1.1,
+        ),
+        itemCount: widget.movies.length,
+        itemBuilder: (context, index, movieindex) {
           final movie = widget.movies[index];
           return Container(
             width: screenwidth,
